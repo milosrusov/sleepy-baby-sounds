@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 
 interface AudioControllerProps {
   soundUrl: string;
@@ -19,32 +20,61 @@ const AudioController = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [remainingTime, setRemainingTime] = useState<number | null>(null);
+  const { toast } = useToast();
 
   // Initialize audio element
   useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+
     audioRef.current = new Audio(soundUrl);
     audioRef.current.loop = true;
+    audioRef.current.preload = "auto";
+    
+    // Add error handler for audio loading issues
+    const handleAudioError = () => {
+      console.error("Error loading audio:", soundUrl);
+      toast({
+        title: "Audio Error",
+        description: "There was a problem playing the selected sound.",
+        variant: "destructive",
+      });
+    };
+    
+    audioRef.current.addEventListener('error', handleAudioError);
     
     return () => {
       if (audioRef.current) {
+        audioRef.current.removeEventListener('error', handleAudioError);
         audioRef.current.pause();
         audioRef.current = null;
       }
     };
-  }, [soundUrl]);
+  }, [soundUrl, toast]);
 
   // Handle play/pause
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
-        audioRef.current.play().catch(error => {
-          console.error("Audio play failed:", error);
-        });
+        const playPromise = audioRef.current.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.error("Audio play failed:", error);
+            toast({
+              title: "Playback Error",
+              description: "Unable to play the sound. Try another sound.",
+              variant: "destructive",
+            });
+          });
+        }
       } else {
         audioRef.current.pause();
       }
     }
-  }, [isPlaying, soundUrl]);
+  }, [isPlaying, soundUrl, toast]);
 
   // Handle volume changes
   useEffect(() => {
