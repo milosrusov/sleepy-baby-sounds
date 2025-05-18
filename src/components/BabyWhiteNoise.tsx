@@ -10,44 +10,84 @@ import VolumeControl from './VolumeControl';
 import { useToast } from '@/components/ui/use-toast';
 
 // Sound database with alternative sources
+// const SOUNDS = [
+//   { 
+//     id: 'white-noise', 
+//     name: 'White Noise', 
+//     description: 'Steady, consistent noise',
+//     url: 'https://freesound.org/data/previews/133/133099_2105621-lq.mp3'
+//   },
+//   { 
+//     id: 'heartbeat', 
+//     name: 'Heartbeat', 
+//     description: 'Soothing womb sounds',
+//     url: 'https://freesound.org/data/previews/362/362044_2626385-lq.mp3'
+//   },
+//   { 
+//     id: 'rain', 
+//     name: 'Rain', 
+//     description: 'Gentle rainfall sounds',
+//     url: 'https://freesound.org/data/previews/531/531953_7546112-lq.mp3'
+//   },
+//   { 
+//     id: 'ocean', 
+//     name: 'Ocean Waves', 
+//     description: 'Calm sea sounds',
+//     url: 'https://freesound.org/data/previews/527/527408_5038-lq.mp3'
+//   },
+//   { 
+//     id: 'lullaby', 
+//     name: 'Lullaby', 
+//     description: 'Gentle music for sleep',
+//     url: 'https://ia800305.us.archive.org/7/items/LullabiesLullabyForBabiesToGoToSleepBabySongSleepMusicBabySleepingSongsBedtimeSo/4%20HOURS%20of%20BRAHMS%20LULLABY%20BABY%20SLEEP%20MUSIC%20BABY%20RELAXING%20MUSIC%20BEDTIME.mp3'
+//   },
+//   { 
+//     id: 'shushing', 
+//     name: 'Shushing', 
+//     description: 'Calming parental shush',
+//     url: 'https://freesound.org/data/previews/242/242008_4322383-lq.mp3'
+//   }
+// ];
+
 const SOUNDS = [
   { 
     id: 'white-noise', 
     name: 'White Noise', 
     description: 'Steady, consistent noise',
-    url: 'https://freesound.org/data/previews/133/133099_2105621-lq.mp3'
+    url: '/sounds/white-noise.mp3'
   },
   { 
-    id: 'heartbeat', 
-    name: 'Heartbeat', 
-    description: 'Soothing womb sounds',
-    url: 'https://freesound.org/data/previews/362/362044_2626385-lq.mp3'
+    id: 'spring-forest', 
+    name: 'Spring Forest', 
+    description: 'Gentle forest sounds',
+    url: '/sounds/spring-forest.mp3'
   },
   { 
     id: 'rain', 
     name: 'Rain', 
     description: 'Gentle rainfall sounds',
-    url: 'https://freesound.org/data/previews/531/531953_7546112-lq.mp3'
+    url: '/sounds/rain.mp3'
   },
   { 
     id: 'ocean', 
     name: 'Ocean Waves', 
     description: 'Calm sea sounds',
-    url: 'https://freesound.org/data/previews/527/527408_5038-lq.mp3'
+    url: '/sounds/ocean.mp3'
   },
   { 
     id: 'lullaby', 
     name: 'Lullaby', 
     description: 'Gentle music for sleep',
-    url: 'https://ia800305.us.archive.org/7/items/LullabiesLullabyForBabiesToGoToSleepBabySongSleepMusicBabySleepingSongsBedtimeSo/4%20HOURS%20of%20BRAHMS%20LULLABY%20BABY%20SLEEP%20MUSIC%20BABY%20RELAXING%20MUSIC%20BEDTIME.mp3'
+    url: '/sounds/lullaby.mp3'
   },
   { 
     id: 'shushing', 
     name: 'Shushing', 
     description: 'Calming parental shush',
-    url: 'https://freesound.org/data/previews/242/242008_4322383-lq.mp3'
+    url: '/sounds/shushing.mp3'
   }
 ];
+
 
 const BabyWhiteNoise = () => {
   const [isPlaying, setIsPlaying] = useState(false);
