@@ -24,14 +24,21 @@ const AudioController = ({
 
   // Initialize audio element
   useEffect(() => {
+    // Clear any existing audio
     if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.src = "";
+      audioRef.current.load();
       audioRef.current = null;
     }
 
-    audioRef.current = new Audio(soundUrl);
-    audioRef.current.loop = true;
-    audioRef.current.preload = "auto";
+    // Create new audio element with improved loading
+    const audio = new Audio();
+    audio.crossOrigin = "anonymous";
+    audio.preload = "auto";
+    audio.loop = true;
+    audio.src = soundUrl;
+    audioRef.current = audio;
     
     // Add error handler for audio loading issues
     const handleAudioError = () => {
@@ -43,12 +50,13 @@ const AudioController = ({
       });
     };
     
-    audioRef.current.addEventListener('error', handleAudioError);
+    audio.addEventListener('error', handleAudioError);
     
     return () => {
       if (audioRef.current) {
         audioRef.current.removeEventListener('error', handleAudioError);
         audioRef.current.pause();
+        audioRef.current.src = "";
         audioRef.current = null;
       }
     };

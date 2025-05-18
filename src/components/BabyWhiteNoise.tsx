@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -9,43 +8,43 @@ import TimerSelector from './TimerSelector';
 import VolumeControl from './VolumeControl';
 import { useToast } from '@/components/ui/use-toast';
 
-// Sound database
+// Sound database with alternative sources
 const SOUNDS = [
   { 
     id: 'white-noise', 
     name: 'White Noise', 
     description: 'Steady, consistent noise',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-spinning-light-generator-1652.wav'
+    url: 'https://freesound.org/data/previews/133/133099_2105621-lq.mp3'
   },
   { 
     id: 'heartbeat', 
     name: 'Heartbeat', 
     description: 'Soothing womb sounds',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-heartbeat-at-81-bpm-2467.wav'
+    url: 'https://freesound.org/data/previews/362/362044_2626385-lq.mp3'
   },
   { 
     id: 'rain', 
     name: 'Rain', 
     description: 'Gentle rainfall sounds',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-light-rain-looping-1249.wav'
+    url: 'https://freesound.org/data/previews/531/531953_7546112-lq.mp3'
   },
   { 
     id: 'ocean', 
     name: 'Ocean Waves', 
     description: 'Calm sea sounds',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-sea-waves-1196.wav'
+    url: 'https://freesound.org/data/previews/527/527408_5038-lq.mp3'
   },
   { 
     id: 'lullaby', 
     name: 'Lullaby', 
     description: 'Gentle music for sleep',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-ethereal-fairy-win-sound-2019.wav'
+    url: 'https://freesound.org/data/previews/467/467982_9591646-lq.mp3'
   },
   { 
     id: 'shushing', 
     name: 'Shushing', 
     description: 'Calming parental shush',
-    url: 'https://assets.mixkit.co/sfx/download/mixkit-mysterious-wind-whoosh-1148.wav'
+    url: 'https://freesound.org/data/previews/242/242008_4322383-lq.mp3'
   }
 ];
 
