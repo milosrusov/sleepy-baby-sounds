@@ -27,9 +27,7 @@ jobs:
       # Bildovanje React aplikacije za produkciju
       - name: Build React App
         run: npm run build
-        env:
-          PUBLIC_URL: "./"  # Postavi base URL za GitHub Pages
-
+        
       # Izlistavanje sadržaja build foldera nakon build-a
       - name: List build folder contents
         run: ls -laR dist/
