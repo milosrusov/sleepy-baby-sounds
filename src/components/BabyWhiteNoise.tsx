@@ -9,46 +9,6 @@ import TimerSelector from './TimerSelector';
 import VolumeControl from './VolumeControl';
 import { useToast } from '@/components/ui/use-toast';
 
-// Sound database with alternative sources
-// const SOUNDS = [
-//   { 
-//     id: 'white-noise', 
-//     name: 'White Noise', 
-//     description: 'Steady, consistent noise',
-//     url: 'https://freesound.org/data/previews/133/133099_2105621-lq.mp3'
-//   },
-//   { 
-//     id: 'heartbeat', 
-//     name: 'Heartbeat', 
-//     description: 'Soothing womb sounds',
-//     url: 'https://freesound.org/data/previews/362/362044_2626385-lq.mp3'
-//   },
-//   { 
-//     id: 'rain', 
-//     name: 'Rain', 
-//     description: 'Gentle rainfall sounds',
-//     url: 'https://freesound.org/data/previews/531/531953_7546112-lq.mp3'
-//   },
-//   { 
-//     id: 'ocean', 
-//     name: 'Ocean Waves', 
-//     description: 'Calm sea sounds',
-//     url: 'https://freesound.org/data/previews/527/527408_5038-lq.mp3'
-//   },
-//   { 
-//     id: 'lullaby', 
-//     name: 'Lullaby', 
-//     description: 'Gentle music for sleep',
-//     url: 'https://ia800305.us.archive.org/7/items/LullabiesLullabyForBabiesToGoToSleepBabySongSleepMusicBabySleepingSongsBedtimeSo/4%20HOURS%20of%20BRAHMS%20LULLABY%20BABY%20SLEEP%20MUSIC%20BABY%20RELAXING%20MUSIC%20BEDTIME.mp3'
-//   },
-//   { 
-//     id: 'shushing', 
-//     name: 'Shushing', 
-//     description: 'Calming parental shush',
-//     url: 'https://freesound.org/data/previews/242/242008_4322383-lq.mp3'
-//   }
-// ];
-
 const SOUNDS = [
   { 
     id: 'white-noise', 
@@ -135,8 +95,7 @@ const BabyWhiteNoise = () => {
     <div className="w-full max-w-lg mx-auto px-4">
       <div className="flex flex-col items-center">
         <div className="flex items-center space-x-3 my-6">
-          <Baby className="h-8 w-8 text-baby-500 animate-float" />
-          <h1 className="text-3xl font-bold text-baby-700">Baby Sound Soother</h1>
+          <h1 className="text-3xl font-bold text-baby-700">Sleepy Baby Sounds</h1>
         </div>
         
         <Card className="w-full p-6 bg-white shadow-lg rounded-2xl card-glow">
