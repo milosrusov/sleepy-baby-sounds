@@ -1,6 +1,6 @@
-# 👶 Baby Sound Shooter
+# 👶 Sleepy Baby Sounds
 
-**Baby Sound Shooter** is a simple and effective React application designed to help parents and caregivers quickly play soothing sounds for babies. The app offers a curated selection of baby-friendly audio tracks, including white noise, heartbeat, rain, ocean waves, lullabies, and shushing sounds.
+**Sleepy Baby Sounds** is a simple and effective React application designed to help parents and caregivers quickly play soothing sounds for babies. The app offers a curated selection of baby-friendly audio tracks, including white noise, heartbeat, rain, ocean waves, lullabies, and shushing sounds.
 
 🎯 The goal of the app is to assist with calming and putting babies to sleep using proven audio stimuli.
 
@@ -20,8 +20,8 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/baby-sound-shooter.git
-cd baby-sound-shooter
+git clone https://github.com/yourusername/sleppy-baby-sounds.git
+cd sleepy-baby-sounds
 ```
 
 ### 2. Install Dependencies
