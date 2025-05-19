@@ -39,5 +39,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # Folder gde se nalazi build-ovana React aplikacija
+          publish_dir: ./dist  # Folder gde se nalazi build-ovana React aplikacija
           publish_branch: gh-pages  # Branch za GitHub Pages
